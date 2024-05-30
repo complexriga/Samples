@@ -261,7 +261,7 @@ FROM ra_customer_trx_all        trx,
         AND   hroutl_bg.organization_id          = hro.business_group_id
         AND   hroutl_ou.organization_id          = hro.organization_id
         AND   glev.legal_entity_id               = lep.legal_entity_id
-        AND   lep.name                           = 'MORELCO SAS'
+        AND   lep.name                           = 'COMPANY NAME'
         AND   lep.transacting_entity_flag        = 'Y'
         AND   reg.source_table                   = 'XLE_ENTITY_PROFILES'
         AND   reg.identifying_flag               = 'Y'
