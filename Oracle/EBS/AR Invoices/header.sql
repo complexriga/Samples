@@ -233,7 +233,6 @@ FROM ra_customer_trx_all        trx,
         SELECT DISTINCT 
                hrl.country,
                hroutl_bg.NAME bg,
-               --hroutl_bg.organization_id,
                lep.legal_entity_id,
                lep.name,
                hroutl_ou.NAME ou_name,
@@ -248,8 +247,8 @@ FROM ra_customer_trx_all        trx,
              hz_parties                   hzp,
              fnd_territories_vl           ter,
              hr_operating_units           hro,
-             hr_all_organization_units_tl hroutl_bg,
-             hr_all_organization_units_tl hroutl_ou,
+             hr_all_organization_units_vl hroutl_bg,
+             hr_all_organization_units_vl hroutl_ou,
              hr_organization_units        gloperatingunitseo,
              gl_legal_entities_bsvs       glev
         WHERE lep.party_id                       = hzp.party_id
@@ -261,11 +260,9 @@ FROM ra_customer_trx_all        trx,
         AND   hroutl_bg.organization_id          = hro.business_group_id
         AND   hroutl_ou.organization_id          = hro.organization_id
         AND   glev.legal_entity_id               = lep.legal_entity_id
-        AND   lep.name                           = 'COMPANY NAME'
         AND   lep.transacting_entity_flag        = 'Y'
         AND   reg.source_table                   = 'XLE_ENTITY_PROFILES'
         AND   reg.identifying_flag               = 'Y'
-        AND   hroutl_bg.language                 = 'ESA'
      )                          org,
      hr_locations_all           loc,
      hz_parties                 prt,
