@@ -423,7 +423,7 @@ LRESULT CALLBACK WndProc(
             break;
         case WM_PAINT:
             PAINTSTRUCT ps;
-            BeginPaint(hWnd, &ps); // En Modos OPENGL deben llamarse BeginPaing y EndPaint para poder retirar WM_PAINT de la Cola de Procesamiento de Mensajes.
+            BeginPaint(hWnd, &ps); // In OPENGL modes BeginPaint and EndPaint should be called in order to pull WM_PAINT from the message processing queue.
 
             if((ilMode == ResourceManager::GDI_ALPHA_MODE || ilMode == ResourceManager::GDI_MASK_MODE) && olTestLevel->isLoaded() && olTestLevel->isInitialized()) { // Coordinate WM_PAINT and WM_ERASEBKGND in order to prevent overdrawing.
                 try {
