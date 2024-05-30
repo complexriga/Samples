@@ -644,7 +644,7 @@ namespace gametools {
                 static const unsigned char COLLISION_INSIDE = 1; // Checks if some border of the instance is contained completely within the border of other instance.
                 static const unsigned char COLLISION_VECTOR = 2; // Checks if the border of other instance has been intersected from the previous position to the actual position.
 
-                // Typs of instance coordinates:
+                // Types of instance coordinates:
                 static const unsigned char POS_ABSOLUTE = 0; // Absolute position.
                 static const unsigned char POS_DELTA = 1; // Relative position with respect to the actual position.
                 static const unsigned char POS_PERCENTAGE = 2; // Percentage of the new position according to the sprite, real format of fixed point with 2 decimal positions (RE: E+DD; E: Integer; D: Decimal).
@@ -707,12 +707,12 @@ namespace gametools {
 
                 // API for management of the components of the instance.
                 unsigned char getStateChangeCount() const; // Returns true after calling setActiveStateIndex and until catchEvent process an event DRAW.
-                size_t getActiveStateIndex() const; // Retorna el Indice del Estado Activo para la Instancia.
+                size_t getActiveStateIndex() const; // Returns the index of the active state.
                 void setActiveStateIndex(size_t ipStateIndex, unsigned char ipAlignment = ALIGN_TOP_EDGE); // Changes the index of the active state, this index is determined by the order in which the states were introduced into the TileClass.
                 bool isSpriteActive(size_t ipSpriteInx) const;
                 void setSpriteActive(size_t ipSpriteInx, size_t ipFrameInx = 0, bool bpChangeFrameBuffer = false, std::shared_ptr <std::vector <gametools::sprite::Sprite::FrameDescriptor>> apFrameBuffer = std::shared_ptr <std::vector <gametools::sprite::Sprite::FrameDescriptor>> (nullptr)); // Changes the index of the current frame of the sprite with index ipSpriteInx, such that the sprite's index is determined by the order in which the sprites were introduced into the current state.
                 void setSpriteInactive(size_t ipSpriteInx);
-                size_t getFrameIndex(size_t ipSpriteInx) const; // Returns the index of the frame of the sprite wieh index ipSpriteInx.
+                size_t getFrameIndex(size_t ipSpriteInx) const; // Returns the index of the frame of the sprite with index ipSpriteInx.
                 void setFrameIndex(size_t ipSpriteInx, size_t ipFrameInx);
                 std::chrono::milliseconds getFrameNextTickTime(size_t ipSpriteInx) const;
                 void setFrameNextTickTime(size_t ipSpriteInx, std::chrono::milliseconds tpTime);
@@ -737,7 +737,7 @@ namespace gametools {
 
                 // Catch and throw of events.
                 bool throwEvent(std::shared_ptr <const EVENT> opEvent);
-                // ADVERTENCIA: Puede quedar atrapado en un Ciclo Infinito si los Cambios de Estado no se planean correctamente.
+                // WARNING: An infinite cycle can occur if the state changers are not planned correctly.
                 bool catchEvent(std::shared_ptr <const EVENT> opEvent);
 
                 // API for resource management.
@@ -789,7 +789,7 @@ namespace gametools {
                 bool bgInitialized;
                 bool bgStarted;
 
-                SCREEN rgScreen; // Window proyected on the screen from the level's space.
+                SCREEN rgScreen; // Window projected on the screen from the level's space.
 
                 std::map <size_t, ClassEntry> agTiles;
                 std::shared_ptr <std::map <long, std::list <std::shared_ptr <TileInstance>>>> agZBuffer; // Depth queue, defines the order in which the Tiels are drawn starting with those farthest from the camera.
@@ -962,7 +962,7 @@ namespace gametools {
                 bool isLoadingAudios();
                 void waitAudiosLoad();
 
-                // Regurns the resources and their handlers.
+                // Return the resources and their handlers.
                 std::shared_ptr <tools::image::RGBAImage> getBitmap(size_t ipInx);
                 size_t getBitmapHandle(size_t ipInx);
                 std::shared_ptr <tools::audio::Audio> getAudio(size_t ipInx);

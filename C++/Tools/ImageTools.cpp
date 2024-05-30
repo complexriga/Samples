@@ -207,7 +207,7 @@ bool BaseImage::isPlaceholder() const {
 //////////////////////////////////////////////////////////////////////////////////////
 // CONVERSION TOOLS
 
-// // Builds an image from an BMP file.
+// Builds an image from an BMP file.
 shared_ptr <RGBAImage> ImageTools::readBMPFromStream(shared_ptr <istream> opStream, bool bpPlaceholder) {
     if(!opStream)
         throw string("ImageTools::readBMPFromMemory: The Stream cannot be null.");
@@ -580,7 +580,7 @@ shared_ptr <HSVImage> ImageTools::readHSVFromStream(std::shared_ptr <std::istrea
     if(!opStream)
         throw string("ImageTools::readHSVFromStream: The Stream cannot be null.");
 
-    // Lee Primera Parte de la Cabecera.
+    // Reads the first part of the header.
     HSV_HEADER rlHeader;
     opStream->read((char *) &rlHeader, sizeof(HSV_HEADER));
     if(!opStream->good()) {
@@ -682,7 +682,7 @@ shared_ptr <RGBAImage> ImageTools::readPNGFromStream(shared_ptr <istream> opStre
     }
     
     streamoff ilFileSize = opStream->tellg();
-    if(ilFileSize < 45) // Mínimo Tamaño de un Archivo PNG, cuando está vacío.
+    if(ilFileSize < 45) // Minimum size of a PNG file when It is empty.
         throw string("Empty File.");
     opStream->seekg(0, opStream->beg);
 

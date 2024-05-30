@@ -425,7 +425,7 @@ LRESULT CALLBACK WndProc(
             PAINTSTRUCT ps;
             BeginPaint(hWnd, &ps); // En Modos OPENGL deben llamarse BeginPaing y EndPaint para poder retirar WM_PAINT de la Cola de Procesamiento de Mensajes.
 
-            if((ilMode == ResourceManager::GDI_ALPHA_MODE || ilMode == ResourceManager::GDI_MASK_MODE) && olTestLevel->isLoaded() && olTestLevel->isInitialized()) { // Coordina WM_PAINT y WM_ERASEBKGND para prevenir el Sobredibujo.
+            if((ilMode == ResourceManager::GDI_ALPHA_MODE || ilMode == ResourceManager::GDI_MASK_MODE) && olTestLevel->isLoaded() && olTestLevel->isInitialized()) { // Coordinate WM_PAINT and WM_ERASEBKGND in order to prevent overdrawing.
                 try {
                     /*
                     if(inter_start.time_since_epoch().count() != 0) {

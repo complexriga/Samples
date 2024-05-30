@@ -275,7 +275,7 @@ shared_ptr <vector <unsigned char>> ZLIB::inflate(vector <unsigned char>& apData
             }
         } else
             throw string("ZLIB::inflate: Type of Compression is reserved.");
-        if(ilBlockType != 0) break; // Bloque Final.
+        if(ilBlockType != 0) break; // Final block.
     }
 
     return alDstData;

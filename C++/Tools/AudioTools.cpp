@@ -414,7 +414,7 @@ namespace tools {
                         apTracks[ilTrackInx].buf_index = rlEvent.buf_index;
                     } else if((rlEvent.event & 0xf0) != 0xf0) { // Processes the normal commands, which are the first in the series.
                         apTracks[ilTrackInx].last_event = rlEvent.event;
-                        rlEvent.buf_index++; // Salta el Octeto del Evento
+                        rlEvent.buf_index++; // Jumps the byte of the event.
                         clData = ogAudio->getData()->at(rlEvent.buf_index++); // Gets the first byte of data.
                         rlMIDIEvent.dwEvent = ((unsigned long) MEVT_SHORTMSG << 24) | ((unsigned long) rlEvent.event << 0) | ((unsigned long) clData << 8);
                         if(!((rlEvent.event & 0xf0) == 0xc0 || (rlEvent.event & 0xf0) == 0xd0)) {
