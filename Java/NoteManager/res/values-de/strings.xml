@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Note Verwalter</string>
+    <string name="add_button_title">Hinzufügen eine Note</string>
+    <string name="edit_text_hint">Schreiben eine Note</string>
+    <string name="save_button_title">Speichern</string>
+    <string name="del_button_title">Löschung</string>
+	<string name="import_option">Importieren</string>
+	<string name="export_option">Ausführen</string>
+	<string name="about_option">Über</string>
+	
+	<string name="del_message">Wollen diese Notiz zu löschen?</string>
+	<string name="cancel_message">Wollen diese Notiz zu aufheben?</string>
+	<string name="import_message">Dieser Prozess wird alle aktuellen Notizen zu löschen, möchten Sie vorgehen?</string>
+	<string name="about_message">Erstellt von Andres Felipe Giraldo Vasquez</string>
+		
+</resources>

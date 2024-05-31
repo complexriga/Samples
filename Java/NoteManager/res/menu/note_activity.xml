@@ -1,0 +1,45 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/import_option"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/import_option" />
+
+    <item
+        android:id="@+id/export_option"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/export_option" />
+
+    <item
+        android:id="@+id/add_option"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom|withText"
+        android:icon="@android:drawable/ic_menu_add"
+        android:title="@string/add_button_title" />
+
+    <item
+        android:id="@+id/save_option"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom|withText"
+        android:icon="@android:drawable/ic_menu_save"
+        android:title="@string/save_button_title"
+        android:visible="false" />
+
+    <item
+        android:id="@+id/del_option"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom|withText"
+        android:icon="@android:drawable/ic_menu_delete"
+        android:title="@string/del_button_title"
+        android:visible="false" />
+
+    <item
+        android:id="@+id/about_option"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/about_option"
+        android:visible="true" />
+
+</menu>

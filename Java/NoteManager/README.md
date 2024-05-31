@@ -1,0 +1,2 @@
+# Note Manager
+In this Project I developed an App to manage Notes which are saved in Android Internal Database, this App is developed using Android SDK v23 and is compatible with Android from v14 to v17.

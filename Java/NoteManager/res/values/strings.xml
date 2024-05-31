@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Note Manager</string>
+    <string name="add_button_title">Add a Note</string>
+    <string name="edit_text_hint">Write a Note</string>
+    <string name="save_button_title">Save</string>
+    <string name="del_button_title">Delete</string>
+	<string name="import_option">Import</string>
+	<string name="export_option">Export</string>
+	<string name="about_option">About</string>
+	
+	<string name="del_message">Want to delete this Note?</string>
+	<string name="cancel_message">Want to cancel this Note?</string>
+	<string name="import_message">This Process will erase all Current Notes, want You to proceed?</string>
+	<string name="about_message">Created by Andres Felipe Giraldo Vasquez</string>
+		
+</resources>

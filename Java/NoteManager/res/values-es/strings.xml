@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Manejador de Notas</string>
+    <string name="add_button_title">Adicionar una Nota</string>
+    <string name="edit_text_hint">Escribir una Nota</string>
+    <string name="save_button_title">Guardar</string>
+    <string name="del_button_title">Borrar</string>
+	<string name="import_option">Importar</string>
+	<string name="export_option">Exportar</string>
+	<string name="about_option">Acerca de</string>
+	
+	<string name="del_message">Desea borrar esta Nota?</string>
+	<string name="cancel_message">Desea cancelar la Edicion de esta Nota?</string>
+	<string name="import_message">Este Proceso borrara todas las Notas, desea proceder?</string>
+	<string name="about_message">Creado por Andres Felipe Giraldo Vasquez</string>
+</resources>
