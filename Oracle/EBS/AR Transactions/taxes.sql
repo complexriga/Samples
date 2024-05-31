@@ -1,29 +1,11 @@
 SELECT *
 FROM (
         SELECT TO_CHAR(
-                SUM(
-                    ABS(
-                        CASE
-                            WHEN (tpy.type IN ('INV', 'DM') AND dtl.taxable_amount > 0) OR (tpy.type = 'CM' AND dtl.taxable_amount < 0) THEN
-                                dtl.taxable_amount
-                            ELSE
-                                0
-                        END
-                    )
-                ),
+                SUM(ABS(dtl.taxable_amount)),
                 'FM999999999999990D00'
                )                                                                                                                                   TAXABLE_AMOUNT,
                TO_CHAR(
-                SUM(
-                    ABS(
-                        CASE
-                            WHEN (tpy.type IN ('INV', 'DM') AND dtl.extended_amount > 0) OR (tpy.type = 'CM' AND dtl.extended_amount < 0) THEN
-                                dtl.extended_amount
-                            ELSE
-                                0
-                        END
-                    )
-                ),
+                SUM(ABS(dtl.extended_amount)),
                 'FM999999999999990D00'
                )                                                                                                                                    AMOUNT,
                TO_CHAR(ABS(tax.tax_rate), 'FM999999999999990D00')                                                                                   RATE

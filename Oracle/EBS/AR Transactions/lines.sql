@@ -22,26 +22,8 @@ FROM ra_customer_trx_all        trx,
      (
         SELECT *
         FROM (
-                SELECT SUM(
-                        ABS(
-                            CASE
-                                WHEN (tpy.type IN ('INV', 'DM') AND dtl.taxable_amount > 0) OR (tpy.type = 'CM' AND dtl.taxable_amount < 0) THEN
-                                    dtl.taxable_amount
-                                ELSE
-                                    0
-                            END
-                        )
-                       )                                                                                                                                  TAXABLE_AMOUNT,
-                       SUM(
-                        ABS(
-                            CASE
-                                WHEN (tpy.type IN ('INV', 'DM') AND dtl.extended_amount > 0) OR (tpy.type = 'CM' AND dtl.extended_amount < 0) THEN
-                                    dtl.extended_amount
-                                ELSE
-                                    0
-                            END
-                        )
-                       )                                                                                                                                   AMOUNT,
+                SELECT SUM(ABS(dtl.taxable_amount))                                                                                                        TAXABLE_AMOUNT,
+                       SUM(ABS(dtl.extended_amount))                                                                                                       AMOUNT,
                        ABS(tax.tax_rate)                                                                                                                   RATE,
                        dtl.customer_trx_id,
                        dtl.link_to_cust_trx_line_id
@@ -63,6 +45,5 @@ AND   trx.cust_trx_type_id      = tpy.cust_trx_type_id
 AND   dtl.customer_trx_id       = tax.customer_trx_id(+)
 AND   dtl.customer_trx_line_id  = tax.link_to_cust_trx_line_id(+)
 AND   dtl.line_type             = 'LINE'
-AND   dtl.extended_amount * CASE WHEN tpy.type = 'CM' THEN -1 ELSE 1 END > 0
 AND   trx.customer_trx_id       = ?
 ORDER BY dtl.line_number

@@ -1,0 +1,2 @@
+# Caber Game Engine
+In this Project I developed a Game based on the 8 Queens Puzzle, but I extend It to a Board of any Size and not only using Queens (PIECE_S), but also Towers (PIECE_C) and Bishops (PIECE_X), generating the Pieces Distribution on the Board using the Min-Conflicts Algorithm.
